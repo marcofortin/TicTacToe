@@ -118,23 +118,24 @@ int move (int player, int square, char board[]) {
   else if (player == 2) {
     marker = 'X';
   }
-  // invalid move
+  // invalid move (case as already been marked)
   if (board[square - 1] != ' ') {
     printf("Sorry, invalid mode, try again.\n");
     return -1;
   }
   else {
+      // mark the square
     board[square - 1] = marker;
 
     // checks for a winning move
     int is_winner = win_check(square - 1, board);
 
-      if (is_winner) {
+    if (is_winner) {
       // Winner found
       printf("Congratulation, player %d wins!\n", player);
       return 1;
     }
-    // checks for a tie move
+    // checks for a tie move (i.e all squares are  marked)
     else if ((board[0] != ' ') && (board[1] != ' ') && (board[2] != ' ')
           && (board[3] != ' ') && (board[4] != ' ') && (board[5] != ' ')
           && (board[6] != ' ') && (board[7] != ' ') && (board[8] != ' ' )) {
