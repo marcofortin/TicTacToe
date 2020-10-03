@@ -1,2 +1,2 @@
-# TicTacToe
-A quick TicTacToe integration in c.
+# tic-tac-toe
+A simple tic-tac-toe integration in C
